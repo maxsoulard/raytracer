@@ -1,0 +1,15 @@
+{
+  "name": "raytracer",
+  "version": "0.0.1",
+  "description": "Raytracer",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "grunt karma"
+  },
+  "author": "max.soulard@gmail.com",
+  "license": "ISC"
+}
