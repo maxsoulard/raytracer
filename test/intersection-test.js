@@ -1,6 +1,8 @@
 QUnit.module( "Intersection", {});
 
 QUnit.test("Rayon doesn't intersect sphere", function(assert) {
+    assert.expect(1);
+
     const sphere1 = {rayon: 70, centre: new Vector(150.0, 150.0, -100)};
     var rayon = {origin: new Vector(0, 0, 1000), direction: new Vector(0, 0, -1)};
     const intersection = new Intersection(rayon, sphere1);
@@ -9,7 +11,21 @@ QUnit.test("Rayon doesn't intersect sphere", function(assert) {
     assert.strictEqual(resultToAssert, undefined);
 });
 
+QUnit.test("Calculate Delta", function(assert) {
+    assert.expect(1);
+
+    const sphere1 = {rayon: 70, centre: new Vector(150.0, 150.0, -100)};
+    var rayon = {origin: new Vector(0, 0, 1000), direction: new Vector(0, 0, -1)};
+    const intersection = new Intersection(rayon, sphere1);
+
+    let result = intersection.calculateDelta(5, 4, 8);
+
+    assert.strictEqual(result, -144); // 4^2 - 4 * 5 * 8 = -144;
+});
+
 QUnit.test("Random ray intersects sphere", function(assert) {
+    assert.expect(1);
+
     const sphere1 = {rayon: 70, centre: new Vector(150.0, 150.0, -100)};
     let isIntersected = false;
     while (!isIntersected) {
@@ -23,17 +39,8 @@ QUnit.test("Random ray intersects sphere", function(assert) {
         const rayon = {origin: new Vector(oX, oY, oZ), direction: new Vector(0, 0, -1)};
         const intersection = new Intersection(rayon, sphere1);
         const resultToAssert = intersection.getClosestIntersect();
-        if (resultToAssert) {
-            console.log("RAYON INTERSECT TROVUE : ");
-            console.log("origine  = " + rayon.origin.x + " " + rayon.origin.y + " " + rayon.origin.z);
-            console.log("direction  = " + rayon.direction.x + " " + rayon.direction.y + " " + rayon.direction.z);
-            assert.ok(typeof resultToAssert != "undefined");
-            isIntersected = typeof resultToAssert != "undefined";
-        }
-        else {
-            console.log("RAYON INTERSECT NON TROVUE : ");
-            console.log("origine  = " + rayon.origin.x + " " + rayon.origin.y + " " + rayon.origin.z);
-            console.log("direction  = " + rayon.direction.x + " " + rayon.direction.y + " " + rayon.direction.z);
-        }
+        isIntersected = typeof resultToAssert != "undefined";
     }
+
+    assert.ok(isIntersected);
 });
