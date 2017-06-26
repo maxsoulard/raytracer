@@ -1,15 +1,29 @@
 {
   "name": "raytracer",
   "version": "0.0.1",
-  "description": "Raytracer",
+  "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxsoulard/raytracer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxsoulard/raytracer/issues"
+  },
+  "homepage": "https://github.com/maxsoulard/raytracer",
   "dependencies": {
+    "browserify": "^14.4.0",
     "grunt": "^1.0.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "grunt karma"
-  },
-  "author": "max.soulard@gmail.com",
-  "license": "ISC"
+  "devDependencies": {
+    "grunt-browserify": "^5.0.0"
+  }
 }
