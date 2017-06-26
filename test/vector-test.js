@@ -38,6 +38,24 @@ QUnit.test("Cross product two vectors, returns a new vector", function(assert) {
     assert.deepEqual(returnCoordinatesObject(result), expected);
 });
 
+QUnit.test("Type error is thrown", function(assert) {
+    const vec1 = new Vector(10, 15, 25), vec2 = {};
+    const expected = {x: -100, y: 150, z: -50};
+    // ACT
+    assert.throws(function() { 
+            vec1.crossProduct(vec2);
+        }, TypeError, "A TypeError is thrown");
+    assert.throws(function() { 
+            vec1.add(vec2);
+        }, TypeError, "A TypeError is thrown");
+    assert.throws(function() { 
+            vec1.sub(vec2);
+        }, TypeError, "A TypeError is thrown");
+    assert.throws(function() {
+            vec1.dot(vec2);
+        }, TypeError, "A TypeError is thrown");
+});
+
 function returnCoordinatesObject(vec) {
     return {x: vec.x, y: vec.y, z: vec.z};
 }
