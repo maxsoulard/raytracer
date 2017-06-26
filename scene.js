@@ -28,3 +28,5 @@ const scene =  {
          }
         ]
  }
+
+ module.exports = scene;

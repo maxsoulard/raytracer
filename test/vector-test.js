@@ -1,3 +1,5 @@
+const Vector = require("../lib/vector.js");
+
 QUnit.module( "Vector", {});
 
 QUnit.test("Add two vectors, returns a new vector", function(assert) {

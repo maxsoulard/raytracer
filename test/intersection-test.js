@@ -1,3 +1,6 @@
+const Intersection = require("../lib/intersection.js");
+const Vector = require("../lib/vector.js");
+
 QUnit.module( "Intersection", {});
 
 QUnit.test("Rayon doesn't intersect sphere", function(assert) {

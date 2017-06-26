@@ -1,9 +1,14 @@
-window.onload = function() {
+const canvas = document.getElementById('raytracer');
+
+if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const raytracer = require("./lib/raytracer.js");
+    render(raytracer, ctx);
+}
+
+function render(raytracer, ctx) {
     raytracer.init();
     const result = raytracer.start();
-
-    const canvas = document.getElementById('raytracer');
-    const ctx = canvas.getContext('2d');
 
     for (let x = 0; x < 300; x++) {
         for (let y = 0; y < 300; y++) {
