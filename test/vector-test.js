@@ -7,7 +7,7 @@ QUnit.test("Add two vectors, returns a new vector", function(assert) {
     const vec1 = new Vector(10, 10, 10), vec2 = new Vector(10, 10, 10);
     const expected = {x: 20, y: 20, z: 20};
     // ACT
-    const result = vec1.add(vec2);    
+    const result = vec1.add(vec2);
     // ASSERT
     assert.deepEqual(returnCoordinatesObject(result), expected, "After addition, the new vector is : {x: 20, y: 20, z: 20}");
 });
@@ -44,7 +44,7 @@ QUnit.test("Cross product two vectors Vector(10, 15, 25) and Vector(20, 25, 35),
 
 QUnit.test("Type error is thrown", function(assert) {
     // ARRANGE
-    const vec1 = new Vector(10, 15, 25), vec2 = {};
+    const vec1 = new Vector(10, 15, 25), vec2 = 0;
     const expected = {x: -100, y: 150, z: -50};
     // ACT
     // ASSERT
