@@ -1,5 +1,5 @@
 const Intersection = require("../lib/intersection.js");
-const Vector = require("../lib/vector.js");
+const Vector = require("../lib/vector3.js");
 
 QUnit.module( "Intersection", {});
 

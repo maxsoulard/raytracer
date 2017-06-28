@@ -1,10 +1,10 @@
-const Vector = require("../lib/vector.js");
+const Vector = require("../lib/vector3.js");
 
-QUnit.module( "Vector", {});
+QUnit.module( "Vector3", {});
 
 QUnit.test("Add two vectors, returns a new vector", function(assert) {
     // ARRANGE
-    const vec1 = new Vector(10, 10, 10), vec2 = new Vector(10, 10, 10);
+    const vec1 = new Vector3(10, 10, 10), vec2 = new Vector3(10, 10, 10);
     const expected = {x: 20, y: 20, z: 20};
     // ACT
     const result = vec1.add(vec2);
@@ -12,9 +12,9 @@ QUnit.test("Add two vectors, returns a new vector", function(assert) {
     assert.deepEqual(returnCoordinatesObject(result), expected, "After addition, the new vector is : {x: 20, y: 20, z: 20}");
 });
 
-QUnit.test("Sub two vectors Vector(10, 10, 10) and Vector(10, 10, 10), returns a new vector", function(assert) {
+QUnit.test("Sub two vectors Vector3(10, 10, 10) and Vector3(10, 10, 10), returns a new vector", function(assert) {
     // ARRANGE
-    const vec1 = new Vector(10, 10, 10), vec2 = new Vector(10, 10, 10);
+    const vec1 = new Vector3(10, 10, 10), vec2 = new Vector3(10, 10, 10);
     const expected = {x: 0, y: 0, z: 0};
     // ACT
     const result = vec1.sub(vec2);
@@ -24,7 +24,7 @@ QUnit.test("Sub two vectors Vector(10, 10, 10) and Vector(10, 10, 10), returns a
 
 QUnit.test("Multiply two vectors Vector(10, 10, 10) and Vector(10, 10, 10), returns a new vector", function(assert) {
     // ARRANGE
-    const vec1 = new Vector(10, 10, 10), vec2 = new Vector(10, 10, 10);
+    const vec1 = new Vector3(10, 10, 10), vec2 = new Vector3(10, 10, 10);
     const expected = {x: 100, y: 100, z: 100};
     // ACT
     const result = vec1.multiply(vec2);
@@ -32,9 +32,9 @@ QUnit.test("Multiply two vectors Vector(10, 10, 10) and Vector(10, 10, 10), retu
     assert.deepEqual(returnCoordinatesObject(result), expected, "After multiplication, the new vector is : {x: 100, y: 100, z: 100}");
 });
 
-QUnit.test("Cross product two vectors Vector(10, 15, 25) and Vector(20, 25, 35), returns a new vector", function(assert) {
+QUnit.test("Cross product two vectors Vector3(10, 15, 25) and Vector3(20, 25, 35), returns a new vector", function(assert) {
     // ARRANGE
-    const vec1 = new Vector(10, 15, 25), vec2 = new Vector(20, 25, 35);
+    const vec1 = new Vector3(10, 15, 25), vec2 = new Vector3(20, 25, 35);
     const expected = {x: -100, y: 150, z: -50};
     // ACT
     const result = vec1.crossProduct(vec2);
@@ -44,7 +44,7 @@ QUnit.test("Cross product two vectors Vector(10, 15, 25) and Vector(20, 25, 35),
 
 QUnit.test("Type error is thrown", function(assert) {
     // ARRANGE
-    const vec1 = new Vector(10, 15, 25), vec2 = 0;
+    const vec1 = new Vector3(10, 15, 25), vec2 = 0;
     const expected = {x: -100, y: 150, z: -50};
     // ACT
     // ASSERT
@@ -62,9 +62,9 @@ QUnit.test("Type error is thrown", function(assert) {
         }, TypeError, "Vector.dot called, a TypeError is thrown");
 });
 
-QUnit.test("Norm of a Vector (45, 10, 20)", function(assert) {
+QUnit.test("Norm of a Vector3 (45, 10, 20)", function(assert) {
     // ARRANGE
-    const vec1 = new Vector(45, 10, 20);
+    const vec1 = new Vector3(45, 10, 20);
     const expected = 50;
     // ACT
     const result = vec1.norm();
@@ -72,9 +72,9 @@ QUnit.test("Norm of a Vector (45, 10, 20)", function(assert) {
     assert.strictEqual(Math.round(result), expected, "The length (or norm) of the vector is ~50");
 });
 
-QUnit.test("Normalize Vector (45, 10, 20) : get unit vector", function(assert) {
+QUnit.test("Normalize Vector3 (45, 10, 20) : get unit vector", function(assert) {
     // ARRANGE
-    const vec1 = new Vector(45, 10, 20);
+    const vec1 = new Vector3(45, 10, 20);
     // ACT
     const vecNormalized = vec1.normalize();
     const result = vecNormalized.norm();
