@@ -93,6 +93,19 @@ QUnit.test("Normalize Vector3 (45, 10, 20) : get unit vector", function(assert) 
     assert.strictEqual(result, 1, "The normalized vector' norm is 1, it is a unit vector");
 });
 
+QUnit.test("Angle between two vectors", function(assert) {
+    // ARRANGE
+    const vec1 = new Vector3(40, 200, -100);
+    const vec2 = new Vector3(10, 40, 200);
+
+    // ACT
+    const result = Vector3.angleBetween(vec1, vec2);
+
+    // ASSERT
+    assert.strictEqual(Math.round(result.toDegrees()), 104, "The angle between vec1 and vec2 is 104°");
+});
+
+
 function returnCoordinatesObject(vec) {
     return {x: vec.x, y: vec.y, z: vec.z};
 }
