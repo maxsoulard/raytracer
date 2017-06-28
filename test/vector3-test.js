@@ -1,4 +1,4 @@
-const Vector = require("../lib/vector3.js");
+const Vector3 = require("../lib/vector3.js");
 
 QUnit.module( "Vector3", {});
 
@@ -50,16 +50,16 @@ QUnit.test("Type error is thrown", function(assert) {
     // ASSERT
     assert.throws(function() { 
             vec1.crossProduct(vec2);
-        }, TypeError, "Vector.crossProduct called, a TypeError is thrown");
+        }, TypeError, "Vector3.crossProduct called, a TypeError is thrown");
     assert.throws(function() { 
             vec1.add(vec2);
-        }, TypeError, "Vector.add called, a TypeError is thrown");
+        }, TypeError, "Vector3.add called, a TypeError is thrown");
     assert.throws(function() { 
             vec1.sub(vec2);
-        }, TypeError, "Vector.sub called, a TypeError is thrown");
+        }, TypeError, "Vector3.sub called, a TypeError is thrown");
     assert.throws(function() {
             vec1.dot(vec2);
-        }, TypeError, "Vector.dot called, a TypeError is thrown");
+        }, TypeError, "Vector3.dot called, a TypeError is thrown");
 });
 
 QUnit.test("Norm of a Vector3 (45, 10, 20)", function(assert) {
