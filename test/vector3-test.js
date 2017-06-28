@@ -42,6 +42,16 @@ QUnit.test("Cross product two vectors Vector3(10, 15, 25) and Vector3(20, 25, 35
     assert.deepEqual(returnCoordinatesObject(result), expected, "After cross product, the new vector is : {x: -100, y: 150, z: -50}");
 });
 
+QUnit.test("Dot product two vectors Vector3(10, 15, 25) and Vector3(20, 25, 35), returns a dot product", function(assert) {
+    // ARRANGE
+    const vec1 = new Vector3(10, 15, 25), vec2 = new Vector3(20, 25, 35);
+    const expected = 1450; // x: 10 * 10 = 200 + y: 15 * 25 = 375 + z: 25 * 35 = 875
+    // ACT
+    const result = vec1.dotProduct(vec2);
+    // ASSERT
+    assert.strictEqual(result, 1450, "Dot product, the result is 1450 (x: 10 * 10 = 200 + y: 15 * 25 = 375 + z: 25 * 35 = 875)");
+});
+
 QUnit.test("Type error is thrown", function(assert) {
     // ARRANGE
     const vec1 = new Vector3(10, 15, 25), vec2 = 0;
@@ -58,7 +68,7 @@ QUnit.test("Type error is thrown", function(assert) {
             vec1.sub(vec2);
         }, TypeError, "Vector3.sub called, a TypeError is thrown");
     assert.throws(function() {
-            vec1.dot(vec2);
+            vec1.dotProduct(vec2);
         }, TypeError, "Vector3.dot called, a TypeError is thrown");
 });
 
