@@ -21,7 +21,9 @@
   "homepage": "https://github.com/maxsoulard/raytracer",
   "dependencies": {
     "browserify": "^14.4.0",
-    "grunt": "^1.0.1"
+    "chai": "^4.0.2",
+    "grunt": "^1.0.1",
+    "mocha": "^3.4.2"
   },
   "devDependencies": {
     "grunt-browserify": "^5.0.0"
