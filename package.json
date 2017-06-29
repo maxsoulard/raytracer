@@ -3,11 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "grunt test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,7 +18,9 @@
   "homepage": "https://github.com/maxsoulard/raytracer",
   "dependencies": {
     "browserify": "^14.4.0",
-    "grunt": "^1.0.1"
+    "chai": "^4.0.2",
+    "grunt": "^1.0.1",
+    "mocha": "^3.4.2"
   },
   "devDependencies": {
     "grunt-browserify": "^5.0.0"
