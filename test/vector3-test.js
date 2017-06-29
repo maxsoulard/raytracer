@@ -122,16 +122,16 @@ function typeErrorThrown(done) {
         vec1.dotProduct(vec2) 
     };
     const crossProduct = function() {
-        vec1.crossProduct(vec2) 
+        vec1.crossProduct(vec2);
     };
     const sub = function() {
-        vec1.sub(vec2) 
+        vec1.sub(vec2);
     };
     const add = function() {
-        vec1.add(vec2) 
+        vec1.add(vec2);
     };
     const dot = function() {
-        vec1.dot(vec2) 
+        vec1.dot(vec2);
     };
     // ACT & ASSERT
     expect(dotProduct).to.throw(TypeError);
