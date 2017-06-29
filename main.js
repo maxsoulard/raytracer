@@ -1,3 +1,5 @@
+const scene = require("./scene.json");
+
 const canvas = document.getElementById('raytracer');
 
 if (canvas) {
@@ -10,8 +12,8 @@ function render(raytracer, ctx) {
     raytracer.init();
     const result = raytracer.start();
 
-    for (let x = 0; x < 300; x++) {
-        for (let y = 0; y < 300; y++) {
+    for (let x = 0; x < scene.resolution.x; x++) {
+        for (let y = 0; y < scene.resolution.y; y++) {
             if (result[x][y]) {
                 let pixel = result[x][y];
                 ctx.fillStyle = "rgb("+pixel.color.r+","+pixel.color.g+","+pixel.color.b+")";
