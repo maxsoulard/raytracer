@@ -4,7 +4,7 @@ const Point = require("../lib/point.js");
 
 describe('Point', function() {
   it('should throw TypeError exception when instanceof param NOT object', typeErrorThrown);
-  it('should return length between P1(20, 20, 20) and P2(30, 10, 0) = sqrt((20 - 30)² + (20 - 10)² + (20 - 0)²) ~= 24', lengthBetween);
+  it('should return distance between P1(20, 20, 20) and P2(30, 10, 0) = sqrt((20 - 30)² + (20 - 10)² + (20 - 0)²) ~= 24', distanceBetween);
   it('should calculate angle from 3 points', angleFrom3Points);
 });
 
@@ -18,13 +18,13 @@ function typeErrorThrown(done) {
     done();
 }
 
-function lengthBetween(done) {
+function distanceBetween(done) {
     // ARRANGE
     const p1 = new Point(20, 20, 20);
     const p2 = new Point(30, 10, 0);
     const expected = 24;
     // ACT
-    const result = Point.lengthBetween(p1, p2);
+    const result = Point.distanceBetween(p1, p2);
     // ASSERT
     expect(expected).to.equal(Math.round(result));
     done();
