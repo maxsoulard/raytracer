@@ -138,7 +138,6 @@ function typeErrorThrown(done) {
     expect(crossProduct).to.throw(TypeError);
     expect(sub).to.throw(TypeError);
     expect(add).to.throw(TypeError);
-    expect(dot).to.throw(TypeError);
     done();
 }
 
