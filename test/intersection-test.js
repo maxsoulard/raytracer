@@ -14,9 +14,9 @@ function closestIntersectHasNoSolution(done) {
     // ARRANGE
     const sphere1 = {rayon: 70, centre: new Vector3(150.0, 150.0, -100)};
     var rayon = {origin: new Vector3(0, 0, 1000), direction: new Vector3(0, 0, -1)};
-    const intersection = new Intersection(rayon, sphere1);
+    const intersection = new Intersection(rayon, sphere1).getClosestIntersect();
     // ACT
-    const resultToAssert = intersection.getClosestIntersect();
+    const resultToAssert = intersection.closest;
     // ASSERT
     expect(resultToAssert).to.be.an('undefined');
     done();
@@ -52,9 +52,9 @@ function randomRayIntersectSphere(done) {
     const sphere1 = {rayon: 70, centre: new Vector3(150.0, 150.0, -100)};
     var isIntersected = false;
     const rayon = {origin: new Vector3(142, 147, 266), direction: new Vector3(0, 0, -1)};
-    const intersection = new Intersection(rayon, sphere1);
+    const intersection = new Intersection(rayon, sphere1).getClosestIntersect();
     // ACT
-    const resultToAssert = intersection.getClosestIntersect();
+    const resultToAssert = intersection.closest;
     // ASSERT
     expect(resultToAssert).to.be.an('Object');
     expect(resultToAssert.x).to.equal(142);
