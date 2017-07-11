@@ -21,7 +21,7 @@
     "chai": "^4.0.2",
     "grunt": "^1.0.1",
     "mocha": "^3.4.2",
-    "vector-three": "^0.2.0"
+    "vector-three": "^0.2.1"
   },
   "devDependencies": {
     "grunt-browserify": "^5.0.0"
