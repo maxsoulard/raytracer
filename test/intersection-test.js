@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const Intersection = require("../lib/intersection.js");
-const Vector3 = require("../lib/vector3.js");
+const Vector3 = require("vector-three");
 
 describe('Intersection', function() {
   it('shouldnt return intersected point', closestIntersectHasNoSolution);
