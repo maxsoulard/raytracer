@@ -2,6 +2,7 @@
 
 Naive implementation of raytracing algo.
 
+## Build
 ```javascript
 npm install
 grunt
